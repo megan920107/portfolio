@@ -20,7 +20,7 @@ Business graduate with internship experience in consumer-insight analytics. I us
 
 ## Experience
 
-**Data Analysis Intern, Index Asia** · Mar 2025 – Sep 2025
+**Data Analysis Intern, Index Asia** · Mar 2025 – Mar 2026
 - Cleaned and processed more than 90,000 consumer feedback records in Excel (pivot tables, VLOOKUP, INDEX MATCH, data validation).
 - Ran share-of-voice and sentiment analysis to evaluate word-of-mouth strategies.
 - Wrote consumer-insight reports for automotive, beauty and banking brands to support positioning and marketing decisions.
