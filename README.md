@@ -29,7 +29,7 @@ Business graduate with internship experience in consumer-insight analytics. I us
 - Analysed client requirements and wrote system design documentation for a new note-taking feature.
 - Coordinated developers and designers on interface layout and user flows; ran status meetings and managed the timeline.
 
-**HR Officer, NCCU Data Analytics Club** · Jun 2023 – Jun 2024
+**HR Coordinator, NCCU Data Analytics Club** · Jun 2023 – Jun 2024
 - Ran recruitment and tracked member attendance and engagement.
 
 ## Education
