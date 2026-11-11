@@ -1,6 +1,6 @@
 # Megan (Yi-Feng) Hung — Data & Business Analytics Portfolio
 
-Business graduate with internship experience in consumer-insight analytics. I use Python, R and Excel to turn messy data into clear answers to business questions.
+Master of Business Analytics candidate at the Schulich School of Business, with internship experience in consumer-insight analytics. I use Python, R and Excel to turn messy data into clear answers to business questions.
 
 **Portfolio site:** https://megan920107.github.io/portfolio/
 
