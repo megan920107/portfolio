@@ -1,6 +1,6 @@
 # Megan (Yi-Feng) Hung — Data & Business Analytics Portfolio
 
-Master of Business Analytics candidate at the Schulich School of Business, with internship experience in consumer-insight analytics. I use Python, R and Excel to turn messy data into clear answers to business questions.
+I'm a Master of Business Analytics student at Schulich who turns messy data into reports people can act on. I graduate in April 2027 and I'm available to start in January 2027.
 
 **Portfolio site:** https://megan920107.github.io/portfolio/
 
