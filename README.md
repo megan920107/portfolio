@@ -34,6 +34,7 @@ Business graduate with internship experience in consumer-insight analytics. I us
 
 ## Education
 
+- **Master of Business Analytics**, Schulich School of Business, York University, Canada · May 2026 – Apr 2027
 - **B.B.A. in International Business**, National Chengchi University, Taiwan (English Taught Program) · 2021 – 2025
 - **Exchange semester**, SKEMA Business School, France · Fall 2024
 
