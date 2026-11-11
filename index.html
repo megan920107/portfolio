@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Megan Hung — Data &amp; Business Analytics</title>
+<meta name="description" content="Portfolio of data and business analytics projects by Megan (Yi-Feng) Hung.">
+<style>
+  :root {
+    --bg: #faf8f5; --card: #ffffff; --ink: #1f2430; --muted: #5d6472;
+    --line: #e6e1d8; --accent: #0f6e6e; --tag-bg: #e8f1f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171c; --card: #1c2027; --ink: #e9ebef; --muted: #a3a9b5;
+      --line: #2c323c; --accent: #5cc4bd; --tag-bg: #223236;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 920px; margin: 0 auto; padding: 56px 20px 72px; }
+  h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .role { color: var(--muted); font-size: 1.05rem; margin: 0 0 22px; }
+  .lead { font-size: 1.12rem; max-width: 62ch; margin: 0 0 22px; }
+  .links a {
+    display: inline-block; margin: 0 10px 10px 0; padding: 9px 16px; border-radius: 8px;
+    border: 1px solid var(--accent); background: var(--accent); color: var(--bg);
+    text-decoration: none; font-weight: 600;
+  }
+  h2 { font-size: 1.25rem; margin: 52px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .tags span, .stack span {
+    display: inline-block; background: var(--tag-bg); color: var(--accent);
+    border-radius: 999px; padding: 3px 11px; margin: 0 6px 6px 0; font-size: 0.85rem;
+  }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+  .card {
+    display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px; color: inherit; text-decoration: none;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover, .card:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 6px; font-size: 1.08rem; }
+  .card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; flex: 1; }
+  .card .result { color: var(--ink); font-weight: 600; flex: 0; }
+  .card img { width: 100%; height: 150px; object-fit: cover; object-position: top left; border-radius: 8px; margin-bottom: 14px; background: #fff; }
+  .job { margin: 0 0 22px; }
+  .job h3 { margin: 0; font-size: 1.02rem; }
+  .job .when { color: var(--muted); font-size: 0.92rem; margin: 0 0 6px; }
+  .job ul { margin: 0; padding-left: 1.1em; }
+  .job li { margin-bottom: 4px; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Megan (Yi-Feng) Hung</h1>
+    <p class="role">Data &amp; Business Analytics</p>
+    <p class="lead">Business graduate with internship experience in consumer-insight analytics. I use Python, R and Excel to turn messy data into clear answers to business questions.</p>
+    <p class="links">
+      <a href="https://github.com/megan920107/portfolio">View code on GitHub</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Skills</h2>
+    <p class="tags">
+      <span>Python</span><span>pandas</span><span>statsmodels</span><span>R</span><span>tidyverse</span>
+      <span>ggplot2</span><span>Excel modelling</span><span>Access</span><span>Tableau</span>
+      <span>Regression</span><span>Clustering</span><span>PCA</span><span>A/B testing</span><span>Text mining</span>
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/02-r-data-analytics">
+        <img src="projects/02-r-data-analytics/figures/airline_cluster_profile.png" alt="Bar chart of service ratings for three customer clusters">
+        <h3>R Data Analytics Series</h3>
+        <p>Six business questions, six methods: customer segments, decision trees, k-means, PCA, review sentiment and an A/B test.</p>
+        <p class="result">90% accuracy predicting airline passenger satisfaction</p>
+        <div class="stack"><span>R</span><span>Machine learning</span><span>Statistics</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/03-financial-econometrics-python">
+        <img src="projects/03-financial-econometrics-python/figures/apple_alpha_by_model.png" alt="Apple's alpha under four factor models with confidence intervals">
+        <h3>Financial Econometrics</h3>
+        <p>CAPM and Fama-French factor models for Apple, plus Monte Carlo checks that confidence intervals behave as promised.</p>
+        <p class="result">Apple's alpha disappears once profitability is priced in</p>
+        <div class="stack"><span>Python</span><span>statsmodels</span><span>Finance</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/05-baidu-bi-analysis">
+        <img src="projects/05-baidu-bi-analysis/figures/operating_income.png" alt="Line chart of operating income for Baidu Core and iQIYI">
+        <h3>Baidu Segment Financials</h3>
+        <p>Five years of quarterly revenue, cost and operating income for Baidu Core and iQIYI, compared in four charts.</p>
+        <p class="result">iQIYI turned profitable by cutting costs, not by growing</p>
+        <div class="stack"><span>Python</span><span>matplotlib</span><span>BI</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/07-imdb-box-office">
+        <img src="projects/07-imdb-box-office/figures/budget_vs_box_office.png" alt="Scatter plot of film budget against box office on log scales">
+        <h3>IMDb Top 250 Box Office</h3>
+        <p>Hypothesis tests, multiple regression and ridge regression on what goes with a high box office. Team project.</p>
+        <p class="result">Budget explains box office; ratings do not</p>
+        <div class="stack"><span>R</span><span>Regression</span><span>glmnet</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/01-public-restroom-map">
+        <h3>Public Restroom Map</h3>
+        <p>Government open data and crowdsourced survey ratings merged into one interactive map of public restrooms around campus. Team project.</p>
+        <div class="stack"><span>Python</span><span>folium</span><span>APIs</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/04-coffee-shop-sales">
+        <h3>Coffee Shop Sales Analysis</h3>
+        <p>An order database with forms, queries and reports, plus Excel models that find the most profitable product bundle. Team project.</p>
+        <div class="stack"><span>Access</span><span>Excel Solver</span><span>Pivot tables</span></div>
+      </a>
+      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/06-fred-macro-data">
+        <h3>FRED Macro Dataset</h3>
+        <p>A reproducible pipeline that builds a monthly dataset of US inflation, interest rates and the output gap from public data.</p>
+        <div class="stack"><span>Python</span><span>Time series</span><span>Data pipeline</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Data Analysis Intern, Index Asia</h3>
+      <p class="when">Mar 2025 – Sep 2025</p>
+      <ul>
+        <li>Cleaned and processed more than 90,000 consumer feedback records in Excel.</li>
+        <li>Ran share-of-voice and sentiment analysis to evaluate word-of-mouth strategies.</li>
+        <li>Wrote consumer-insight reports for automotive, beauty and banking brands.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Project Management Intern, Sunnet</h3>
+      <p class="when">Jul 2024 – Aug 2024</p>
+      <ul>
+        <li>Analysed client requirements and wrote system design documentation for a new note-taking feature.</li>
+        <li>Coordinated developers and designers; ran status meetings and managed the timeline.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>HR Officer, NCCU Data Analytics Club</h3>
+      <p class="when">Jun 2023 – Jun 2024</p>
+      <ul>
+        <li>Ran recruitment and tracked member attendance and engagement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="job">
+      <h3>B.B.A. in International Business, National Chengchi University, Taiwan</h3>
+      <p class="when">2021 – 2025 · English Taught Program</p>
+    </div>
+    <div class="job">
+      <h3>Exchange semester, SKEMA Business School, France</h3>
+      <p class="when">Fall 2024</p>
+    </div>
+  </section>
+
+  <footer>No course-provided, company or client data is published here.</footer>
+</main>
+</body>
+</html>
