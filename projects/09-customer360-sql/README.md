@@ -1,6 +1,6 @@
 # Customer360: A Weekly Customer History in SQL
 
-Team project from *Database Fundamentals*, Master of Business Analytics, Schulich School of Business (Summer 2026).
+From *Database Fundamentals*, Master of Business Analytics, Schulich School of Business (Summer 2026). The assignment was set for teams: each member wrote a full solution, and the team compared them and agreed on the design decisions below. This is my own version of the query.
 
 ## Problem
 

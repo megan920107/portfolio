@@ -19,6 +19,7 @@ I'm a Master of Business Analytics student at Schulich who turns messy data into
 | 7 | [IMDb Top 250 Box Office](projects/07-imdb-box-office) | Hypothesis tests, multiple regression and ridge regression on what drives box office | R, glmnet |
 | 8 | [Employee Attrition](projects/08-employee-attrition) | Naive Bayes and SVM classifiers with a tuned decision cut-off and HR recommendations | Python, scikit-learn |
 | 9 | [Customer360 in SQL](projects/09-customer360-sql) | Weekly customer history built with CTEs and window functions on a star schema | PostgreSQL |
+| 10 | [Bakery Sales Analysis in SQL](projects/10-bakery-sales-sql) | Monthly best sellers, peak-hour windows and data-quality checks on point-of-sale data | PostgreSQL |
 
 ## Experience
 
