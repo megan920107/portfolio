@@ -4,7 +4,7 @@ I'm a Master of Business Analytics student at Schulich who turns messy data into
 
 **Portfolio site:** https://megan920107.github.io/portfolio/
 
-**Tools:** Python (pandas, statsmodels, matplotlib, folium) · R (tidyverse, ggplot2, rpart) · Excel (pivot tables, Solver, scenario analysis) · Access · Tableau
+**Tools:** Python (pandas, scikit-learn, statsmodels, matplotlib, folium) · SQL (PostgreSQL) · R (tidyverse, ggplot2, rpart) · Excel (pivot tables, Solver, scenario analysis) · Access · Tableau
 
 ## Projects
 
@@ -17,6 +17,8 @@ I'm a Master of Business Analytics student at Schulich who turns messy data into
 | 5 | [Baidu Segment Financials](projects/05-baidu-bi-analysis) | Five years of segment revenue, cost and profit compared in four charts | Python, matplotlib |
 | 6 | [FRED Macro Dataset](projects/06-fred-macro-data) | Reproducible macro time-series pipeline from a public data source | Python, pandas |
 | 7 | [IMDb Top 250 Box Office](projects/07-imdb-box-office) | Hypothesis tests, multiple regression and ridge regression on what drives box office | R, glmnet |
+| 8 | [Employee Attrition](projects/08-employee-attrition) | Naive Bayes and SVM classifiers with a tuned decision cut-off and HR recommendations | Python, scikit-learn |
+| 9 | [Customer360 in SQL](projects/09-customer360-sql) | Weekly customer history built with CTEs and window functions on a star schema | PostgreSQL |
 
 ## Experience
 

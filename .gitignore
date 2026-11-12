@@ -8,6 +8,7 @@ token*/
 # Course-provided datasets stay on the local machine only
 projects/02-r-data-analytics/data/
 projects/07-imdb-box-office/data/
+projects/08-employee-attrition/data/
 projects/03-financial-econometrics-python/data/
 *.accdb
 *.xlsx
