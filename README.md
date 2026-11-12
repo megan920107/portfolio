@@ -28,8 +28,11 @@ I'm a Master of Business Analytics student at Schulich who turns messy data into
 - Wrote consumer-insight reports for automotive, beauty and banking brands to support positioning and marketing decisions.
 
 **Project Management Intern, Sunnet** · Jul 2024 – Aug 2024
-- Analysed client requirements and wrote system design documentation for a new note-taking feature.
-- Coordinated developers and designers on interface layout and user flows; ran status meetings and managed the timeline.
+- Gathered and analyzed requirements with internal teams and translated business needs into system design
+documentation.
+- Coordinated with developers and designers on interface and user-flow improvements.
+- Managed timelines and facilitated stakeholder status meetings
+
 
 **HR Coordinator, NCCU Data Analytics Club** · Jun 2023 – Jun 2024
 - Ran recruitment and tracked member attendance and engagement.
