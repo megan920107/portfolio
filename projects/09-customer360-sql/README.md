@@ -21,6 +21,22 @@ Source tables: `fact_tables.conversions`, `fact_tables.orders`, and the customer
 
 ## How it works
 
+```mermaid
+flowchart TD
+    conv[(conversions)] --> cb[1. conversion_base<br/>number conversions, find the next one]
+    ord[(orders)] --> ob[2. orders_base<br/>one row per order]
+    ob --> dl[3. data_limits<br/>last observed week]
+    cb --> co[4. conversion_orders<br/>assign orders to conversions]
+    ob --> co
+    co --> fo[5. first_order]
+    co --> wos[6. weekly_order_summary<br/>aggregate before joining]
+    cb --> cw[7. conversion_weeks<br/>weekly timeline]
+    dl --> cw
+    cw --> final[8. final_customer360<br/>running totals]
+    wos --> final
+    fo --> final
+```
+
 [`customer360.sql`](customer360.sql) is a single PostgreSQL query made of eight common table expressions.
 
 1. **Number the conversions.** `ROW_NUMBER()` orders each customer's conversions, and `LEAD()` finds the next one, which marks where the current conversion period ends.

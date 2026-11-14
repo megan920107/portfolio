@@ -8,6 +8,16 @@ Taiwan's Ministry of Environment publishes the location of every public restroom
 
 ## Approach
 
+```mermaid
+flowchart LR
+    A[Open-data API<br/>national restroom register] --> C[Filter to the two<br/>campus neighbourhoods]
+    B[Google Form survey<br/>5 yes/no questions + comment] --> D[Score each response<br/>0-100]
+    D --> E[Average score and<br/>comments per restroom]
+    C --> F[Join on restroom name]
+    E --> F
+    F --> G[Interactive map<br/>markers coloured by score]
+```
+
 1. **Collect.** Page through the Ministry of Environment open-data API, 1,000 rows per request, until the full national register is downloaded.
 2. **Survey.** A Google Form asks visitors five yes/no questions (damaged fixtures, leaking flush, water pressure, toilet paper, overflowing bins) and for a short comment. Responses are read from the linked Google Sheet with `gspread`.
 3. **Score.** Each response becomes a 0-100 score, the share of answers that indicate good condition. Scores and comments are aggregated per restroom.

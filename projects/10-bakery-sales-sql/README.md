@@ -22,6 +22,16 @@ A point-of-sale table with one row per item sold: date, time, ticket number, ite
 | 4 | Which two-hour window is the busiest of the day? | `LEAD()` to add each hour to the next, then rank |
 | 5 | Is the data clean? | Checks for missing values, duplicate rows, negative amounts, placeholder item names and outliers |
 
+## Example: the busiest two-hour window
+
+```mermaid
+flowchart LR
+    A[Every sale] --> B[Total quantity<br/>per hour of day]
+    B --> C[LEAD: add each hour<br/>to the hour after it]
+    C --> D[ROW_NUMBER: rank the<br/>two-hour totals]
+    D --> E[Keep rank 1]
+```
+
 ## Design choices
 
 - **Aggregate before ranking.** Question 1 first reduces the table to one row per item and month, so the ranking runs on a small result instead of every sale.
