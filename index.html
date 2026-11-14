@@ -4,190 +4,409 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Megan Hung — Data &amp; Business Analytics</title>
-<meta name="description" content="Portfolio of data and business analytics projects by Megan (Yi-Feng) Hung.">
+<meta name="description" content="Portfolio of data and business analytics projects by Megan (Yi-Feng) Hung, Master of Business Analytics student at Schulich.">
 <style>
   :root {
-    --bg: #faf8f5; --card: #ffffff; --ink: #1f2430; --muted: #5d6472;
-    --line: #e6e1d8; --accent: #0f6e6e; --tag-bg: #e8f1f0;
+    --bg: #f7f4ee; --surface: #ffffff; --ink: #1a2230; --muted: #5b6474;
+    --line: #e3ddd1; --accent: #0d6b6b; --accent-ink: #ffffff; --soft: #e6f0ee;
+    --warm: #c8742b; --shadow: 0 1px 2px rgba(26,34,48,.06), 0 8px 24px rgba(26,34,48,.06);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14171c; --card: #1c2027; --ink: #e9ebef; --muted: #a3a9b5;
-      --line: #2c323c; --accent: #5cc4bd; --tag-bg: #223236;
+    :root:not([data-theme="light"]) {
+      --bg: #11151b; --surface: #1a2029; --ink: #e8ebf0; --muted: #9da6b4;
+      --line: #2a323e; --accent: #5cc8bf; --accent-ink: #0c1418; --soft: #1d2d30;
+      --warm: #e2a05f; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
     }
   }
+  :root[data-theme="dark"] {
+    --bg: #11151b; --surface: #1a2029; --ink: #e8ebf0; --muted: #9da6b4;
+    --line: #2a323e; --accent: #5cc8bf; --accent-ink: #0c1418; --soft: #1d2d30;
+    --warm: #e2a05f; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+
   * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; gap: 20px; height: 56px; }
+  .brand { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; color: var(--ink); text-decoration: none; margin-right: auto; }
+  .nav a.link { color: var(--muted); text-decoration: none; font-size: .93rem; }
+  .nav a.link:hover { color: var(--ink); }
+  .theme { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; width: 36px; height: 36px; cursor: pointer; font-size: 1rem; }
+  @media (max-width: 620px) { .nav a.link { display: none; } }
+
+  /* hero */
+  .hero { padding-top: 72px; padding-bottom: 40px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--soft); color: var(--accent); border-radius: 999px; padding: 6px 14px; font-size: .88rem; font-weight: 600; }
+  .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 var(--accent); animation: pulse 2.4s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+  h1 { font-family: var(--serif); font-size: clamp(2.3rem, 6.2vw, 4rem); line-height: 1.08; letter-spacing: -.02em; margin: 22px 0 16px; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lead { font-size: 1.14rem; color: var(--muted); max-width: 60ch; margin: 0 0 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--accent); }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { color: var(--accent); }
+  .btn:hover { filter: brightness(1.08); }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 48px; }
+  .stat { background: var(--surface); padding: 22px 20px; }
+  .stat b { display: block; font-family: var(--mono); font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .stat span { color: var(--muted); font-size: .92rem; }
+  @media (max-width: 620px) { .stats { grid-template-columns: 1fr; } }
+
+  /* sections */
+  section { padding-top: 56px; padding-bottom: 8px; }
+  .eyebrow { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--warm); margin: 0 0 6px; }
+  h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3.6vw, 2.1rem); margin: 0 0 22px; letter-spacing: -.01em; }
+
+  /* filters */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  .chip { border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 999px; padding: 7px 15px; font: inherit; font-size: .9rem; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .chip:focus-visible, .btn:focus-visible, .card:focus-visible, .theme:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+  .card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: inherit; text-decoration: none; box-shadow: var(--shadow); transition: transform .18s ease, border-color .18s ease; }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .card[hidden] { display: none; }
+  .thumb { height: 168px; background: #fff; border-bottom: 1px solid var(--line); overflow: hidden; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  .thumb.tile { display: grid; place-items: center; background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%), repeating-linear-gradient(135deg, var(--soft) 0 14px, transparent 14px 28px), var(--surface); }
+  .thumb.tile code { font-family: var(--mono); font-size: 1.05rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; color: var(--ink); box-shadow: var(--shadow); white-space: pre; line-height: 1.5; }
+  .body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+  .card h3 { margin: 0 0 6px; font-size: 1.1rem; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: .95rem; }
+  .card .result { color: var(--ink); font-weight: 600; border-left: 3px solid var(--warm); padding-left: 10px; margin-top: auto; }
+  .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { background: var(--soft); color: var(--accent); border-radius: 6px; padding: 2px 9px; font-size: .8rem; font-family: var(--mono); }
+  .team { font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; }
+  .count { color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
+
+  /* skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .skill h3 { margin: 0 0 8px; font-size: 1rem; }
+  .skill p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+  /* timeline */
+  .timeline { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 26px; }
+  .item { position: relative; padding-bottom: 28px; }
+  .item::before { content: ""; position: absolute; left: -33px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .item h3 { margin: 0; font-size: 1.06rem; }
+  .when { font-family: var(--mono); font-size: .82rem; color: var(--muted); margin: 2px 0 8px; }
+  .item ul { margin: 0; padding-left: 1.1em; color: var(--muted); }
+  .item li { margin-bottom: 4px; }
+
+  .two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+  @media (max-width: 760px) { .two { grid-template-columns: 1fr; gap: 8px; } }
+  .certs { list-style: none; padding: 0; margin: 0; }
+  .certs li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
+  .certs span { color: var(--muted); font-family: var(--mono); font-size: .82rem; white-space: nowrap; }
+
+  footer { margin-top: 64px; border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .pill i { animation: none; }
+    html { scroll-behavior: auto; }
+    .card { transition: none; }
   }
-  main { max-width: 920px; margin: 0 auto; padding: 56px 20px 72px; }
-  h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.02em; }
-  .role { color: var(--muted); font-size: 1.05rem; margin: 0 0 22px; }
-  .lead { font-size: 1.12rem; max-width: 62ch; margin: 0 0 22px; }
-  .links a {
-    display: inline-block; margin: 0 10px 10px 0; padding: 9px 16px; border-radius: 8px;
-    border: 1px solid var(--accent); background: var(--accent); color: var(--bg);
-    text-decoration: none; font-weight: 600;
-  }
-  h2 { font-size: 1.25rem; margin: 52px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-  .tags span, .stack span {
-    display: inline-block; background: var(--tag-bg); color: var(--accent);
-    border-radius: 999px; padding: 3px 11px; margin: 0 6px 6px 0; font-size: 0.85rem;
-  }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
-  .card {
-    display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line);
-    border-radius: 12px; padding: 20px; color: inherit; text-decoration: none;
-    transition: border-color .15s, transform .15s;
-  }
-  .card:hover, .card:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
-  .card h3 { margin: 0 0 6px; font-size: 1.08rem; }
-  .card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; flex: 1; }
-  .card .result { color: var(--ink); font-weight: 600; flex: 0; }
-  .card img { width: 100%; height: 150px; object-fit: cover; object-position: top left; border-radius: 8px; margin-bottom: 14px; background: #fff; }
-  .job { margin: 0 0 22px; }
-  .job h3 { margin: 0; font-size: 1.02rem; }
-  .job .when { color: var(--muted); font-size: 0.92rem; margin: 0 0 6px; }
-  .job ul { margin: 0; padding-left: 1.1em; }
-  .job li { margin-bottom: 4px; }
-  footer { margin-top: 56px; color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>Megan (Yi-Feng) Hung</h1>
-    <p class="role">Data &amp; Business Analytics</p>
-    <p class="lead">I'm a Master of Business Analytics student at Schulich who turns messy data into reports people can act on. I graduate in April 2027 and I'm available to start in January 2027.</p>
-    <p class="links">
-      <a href="https://github.com/megan920107/portfolio">View code on GitHub</a>
-    </p>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Megan Hung</a>
+    <a class="link" href="#projects">Projects</a>
+    <a class="link" href="#skills">Skills</a>
+    <a class="link" href="#experience">Experience</a>
+    <a class="link" href="#education">Education</a>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme">◐</button>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero wrap">
+    <span class="pill"><i></i>Available to start January 2027</span>
+    <h1>I turn messy data into reports <em>people can act on.</em></h1>
+    <p class="lead">I'm Megan (Yi-Feng) Hung, a Master of Business Analytics student at the Schulich School of Business in Toronto. I work in Python, SQL and R, and I care about analysis that ends in a clear recommendation.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn ghost" href="https://github.com/megan920107/portfolio">Code on GitHub</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>10</b><span>analytics projects, with code and write-ups</span></div>
+      <div class="stat"><b>90,000+</b><span>consumer feedback records analysed as an intern</span></div>
+      <div class="stat"><b>90%</b><span>test accuracy predicting airline passenger satisfaction</span></div>
+    </div>
   </header>
 
-  <section>
-    <h2>Skills</h2>
-    <p class="tags">
-      <span>Python</span><span>pandas</span><span>scikit-learn</span><span>SQL</span><span>statsmodels</span><span>R</span><span>tidyverse</span>
-      <span>ggplot2</span><span>Excel modelling</span><span>Access</span><span>Tableau</span>
-      <span>Regression</span><span>Clustering</span><span>PCA</span><span>A/B testing</span><span>Text mining</span>
-    </p>
-  </section>
-
-  <section>
+  <section id="projects" class="wrap">
+    <p class="eyebrow">Selected work</p>
     <h2>Projects</h2>
-    <div class="grid">
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/08-employee-attrition">
-        <img src="projects/08-employee-attrition/figures/attrition_drivers.png" alt="Bar charts of attrition rate by overtime and by job role">
-        <h3>Employee Attrition</h3>
-        <p>Predicts which employees are likely to leave with Naive Bayes and an SVM, then tunes the cut-off HR should use to flag someone.</p>
-        <p class="result">Overtime triples the chance of leaving</p>
-        <div class="stack"><span>Python</span><span>scikit-learn</span><span>Classification</span></div>
+
+    <div class="filters" role="group" aria-label="Filter projects by tool">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+      <button class="chip" type="button" data-filter="sql" aria-pressed="false">SQL</button>
+      <button class="chip" type="button" data-filter="r" aria-pressed="false">R</button>
+      <button class="chip" type="button" data-filter="excel" aria-pressed="false">Excel &amp; Access</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <a class="card reveal" data-tools="python" href="https://github.com/megan920107/portfolio/tree/main/projects/08-employee-attrition">
+        <div class="thumb"><img loading="lazy" src="projects/08-employee-attrition/figures/attrition_drivers.png" alt="Bar charts of attrition rate by overtime and by job role"></div>
+        <div class="body">
+          <h3>Employee Attrition</h3>
+          <p>Naive Bayes and SVM classifiers that flag employees likely to leave, with the decision cut-off tuned on training data only.</p>
+          <p class="result">Overtime triples the chance of leaving</p>
+          <div class="tags"><span>Python</span><span>scikit-learn</span><span>Classification</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/09-customer360-sql">
-        <h3>Customer360 in SQL</h3>
-        <p>One PostgreSQL query that turns a star schema into a weekly history of every customer: first order, weekly spend and running revenue.</p>
-        <p class="result">Eight CTEs, window functions, no double-counted revenue</p>
-        <div class="stack"><span>SQL</span><span>PostgreSQL</span><span>Window functions</span></div>
+
+      <a class="card reveal" data-tools="sql" href="https://github.com/megan920107/portfolio/tree/main/projects/09-customer360-sql">
+        <div class="thumb tile"><code>SUM(paid) OVER (
+  PARTITION BY customer
+  ORDER BY week)</code></div>
+        <div class="body">
+          <h3>Customer360 in SQL</h3>
+          <p>One PostgreSQL query that turns a star schema into a weekly history of every customer: first order, weekly spend and running revenue.</p>
+          <p class="result">Eight CTEs, no double-counted revenue</p>
+          <div class="tags"><span>SQL</span><span>PostgreSQL</span><span>Window functions</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/10-bakery-sales-sql">
-        <h3>Bakery Sales Analysis in SQL</h3>
-        <p>Five questions on a point-of-sale table: best sellers by month, large baskets, peak hours and whether the data can be trusted.</p>
-        <p class="result">Ranking, time windows and data-quality checks</p>
-        <div class="stack"><span>SQL</span><span>PostgreSQL</span><span>Data quality</span></div>
+
+      <a class="card reveal" data-tools="r" href="https://github.com/megan920107/portfolio/tree/main/projects/02-r-data-analytics">
+        <div class="thumb"><img loading="lazy" src="projects/02-r-data-analytics/figures/airline_cluster_profile.png" alt="Bar chart of service ratings for three customer clusters"></div>
+        <div class="body">
+          <h3>R Data Analytics Series</h3>
+          <p>Six business questions, six methods: customer segments, decision trees, k-means, PCA, review sentiment and an A/B test.</p>
+          <p class="result">90% accuracy on 31,000 held-out passengers</p>
+          <div class="tags"><span>R</span><span>Machine learning</span><span>A/B testing</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/02-r-data-analytics">
-        <img src="projects/02-r-data-analytics/figures/airline_cluster_profile.png" alt="Bar chart of service ratings for three customer clusters">
-        <h3>R Data Analytics Series</h3>
-        <p>Six business questions, six methods: customer segments, decision trees, k-means, PCA, review sentiment and an A/B test.</p>
-        <p class="result">90% accuracy predicting airline passenger satisfaction</p>
-        <div class="stack"><span>R</span><span>Machine learning</span><span>Statistics</span></div>
+
+      <a class="card reveal" data-tools="python" href="https://github.com/megan920107/portfolio/tree/main/projects/03-financial-econometrics-python">
+        <div class="thumb"><img loading="lazy" src="projects/03-financial-econometrics-python/figures/apple_alpha_by_model.png" alt="Apple's alpha under four factor models with confidence intervals"></div>
+        <div class="body">
+          <h3>Financial Econometrics</h3>
+          <p>CAPM and Fama-French factor models for Apple, plus Monte Carlo checks that confidence intervals behave as promised.</p>
+          <p class="result">Apple's alpha disappears once profitability is priced in</p>
+          <div class="tags"><span>Python</span><span>statsmodels</span><span>Finance</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/03-financial-econometrics-python">
-        <img src="projects/03-financial-econometrics-python/figures/apple_alpha_by_model.png" alt="Apple's alpha under four factor models with confidence intervals">
-        <h3>Financial Econometrics</h3>
-        <p>CAPM and Fama-French factor models for Apple, plus Monte Carlo checks that confidence intervals behave as promised.</p>
-        <p class="result">Apple's alpha disappears once profitability is priced in</p>
-        <div class="stack"><span>Python</span><span>statsmodels</span><span>Finance</span></div>
+
+      <a class="card reveal" data-tools="r" href="https://github.com/megan920107/portfolio/tree/main/projects/07-imdb-box-office">
+        <div class="thumb"><img loading="lazy" src="projects/07-imdb-box-office/figures/budget_vs_box_office.png" alt="Scatter plot of film budget against box office on log scales"></div>
+        <div class="body">
+          <h3>IMDb Top 250 Box Office <span class="team">Team</span></h3>
+          <p>Hypothesis tests, multiple regression and ridge regression on what goes with a high box office.</p>
+          <p class="result">Budget explains box office; ratings do not</p>
+          <div class="tags"><span>R</span><span>Regression</span><span>glmnet</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/05-baidu-bi-analysis">
-        <img src="projects/05-baidu-bi-analysis/figures/operating_income.png" alt="Line chart of operating income for Baidu Core and iQIYI">
-        <h3>Baidu Segment Financials</h3>
-        <p>Five years of quarterly revenue, cost and operating income for Baidu Core and iQIYI, compared in four charts.</p>
-        <p class="result">iQIYI turned profitable by cutting costs, not by growing</p>
-        <div class="stack"><span>Python</span><span>matplotlib</span><span>BI</span></div>
+
+      <a class="card reveal" data-tools="sql" href="https://github.com/megan920107/portfolio/tree/main/projects/10-bakery-sales-sql">
+        <div class="thumb tile"><code>ROW_NUMBER() OVER (
+  PARTITION BY month
+  ORDER BY sold DESC)</code></div>
+        <div class="body">
+          <h3>Bakery Sales Analysis in SQL</h3>
+          <p>Five questions on a point-of-sale table: best sellers by month, large baskets, peak hours and whether the data can be trusted.</p>
+          <p class="result">Ranking, time windows and data-quality checks</p>
+          <div class="tags"><span>SQL</span><span>PostgreSQL</span><span>Data quality</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/07-imdb-box-office">
-        <img src="projects/07-imdb-box-office/figures/budget_vs_box_office.png" alt="Scatter plot of film budget against box office on log scales">
-        <h3>IMDb Top 250 Box Office</h3>
-        <p>Hypothesis tests, multiple regression and ridge regression on what goes with a high box office. Team project.</p>
-        <p class="result">Budget explains box office; ratings do not</p>
-        <div class="stack"><span>R</span><span>Regression</span><span>glmnet</span></div>
+
+      <a class="card reveal" data-tools="python" href="https://github.com/megan920107/portfolio/tree/main/projects/05-baidu-bi-analysis">
+        <div class="thumb"><img loading="lazy" src="projects/05-baidu-bi-analysis/figures/operating_income.png" alt="Line chart of operating income for Baidu Core and iQIYI"></div>
+        <div class="body">
+          <h3>Baidu Segment Financials <span class="team">Team</span></h3>
+          <p>Five years of quarterly revenue, cost and operating income for Baidu Core and iQIYI, compared in four charts.</p>
+          <p class="result">iQIYI turned profitable by cutting costs, not by growing</p>
+          <div class="tags"><span>Python</span><span>matplotlib</span><span>BI</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/01-public-restroom-map">
-        <h3>Public Restroom Map</h3>
-        <p>Government open data and crowdsourced survey ratings merged into one interactive map of public restrooms around campus. Team project.</p>
-        <div class="stack"><span>Python</span><span>folium</span><span>APIs</span></div>
+
+      <a class="card reveal" data-tools="python" href="https://github.com/megan920107/portfolio/tree/main/projects/01-public-restroom-map">
+        <div class="thumb tile"><code>open data  +  survey
+      ↓ join
+ interactive map</code></div>
+        <div class="body">
+          <h3>Public Restroom Map <span class="team">Team</span></h3>
+          <p>Government open data and crowdsourced survey ratings merged into one interactive map of public restrooms around campus.</p>
+          <p class="result">Markers coloured by a 0–100 condition score</p>
+          <div class="tags"><span>Python</span><span>folium</span><span>APIs</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/04-coffee-shop-sales">
-        <h3>Coffee Shop Sales Analysis</h3>
-        <p>An order database with forms, queries and reports, plus Excel models that find the most profitable product bundle. Team project.</p>
-        <div class="stack"><span>Access</span><span>Excel Solver</span><span>Pivot tables</span></div>
+
+      <a class="card reveal" data-tools="python" href="https://github.com/megan920107/portfolio/tree/main/projects/06-fred-macro-data">
+        <div class="thumb"><img loading="lazy" src="projects/06-fred-macro-data/output/macro_series.png" alt="Three time series: federal funds rate, inflation and output gap"></div>
+        <div class="body">
+          <h3>FRED Macro Dataset</h3>
+          <p>A reproducible pipeline that builds a monthly dataset of US inflation, interest rates and the output gap from public data.</p>
+          <p class="result">867 months of data, no API key needed</p>
+          <div class="tags"><span>Python</span><span>pandas</span><span>Time series</span></div>
+        </div>
       </a>
-      <a class="card" href="https://github.com/megan920107/portfolio/tree/main/projects/06-fred-macro-data">
-        <h3>FRED Macro Dataset</h3>
-        <p>A reproducible pipeline that builds a monthly dataset of US inflation, interest rates and the output gap from public data.</p>
-        <div class="stack"><span>Python</span><span>Time series</span><span>Data pipeline</span></div>
+
+      <a class="card reveal" data-tools="excel" href="https://github.com/megan920107/portfolio/tree/main/projects/04-coffee-shop-sales">
+        <div class="thumb tile"><code>Solver → maximise profit
+bundle = 39 scones
+       +  5 biscotti</code></div>
+        <div class="body">
+          <h3>Coffee Shop Sales Analysis <span class="team">Team</span></h3>
+          <p>An order database with forms, queries and reports, plus Excel models that find the most profitable product bundle.</p>
+          <p class="result">About $67 profit per optimised bundle</p>
+          <div class="tags"><span>Access</span><span>Excel Solver</span><span>Pivot tables</span></div>
+        </div>
       </a>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </section>
+
+  <section id="skills" class="wrap">
+    <p class="eyebrow">Toolkit</p>
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill reveal"><h3>Python</h3><p>pandas, scikit-learn, statsmodels, matplotlib, folium. Classification, regression, simulation, data pipelines.</p></div>
+      <div class="skill reveal"><h3>SQL</h3><p>PostgreSQL. Common table expressions, window functions, star schemas, data-quality checks.</p></div>
+      <div class="skill reveal"><h3>R</h3><p>tidyverse, ggplot2, rpart, glmnet. Clustering, PCA, text mining, hypothesis and A/B testing.</p></div>
+      <div class="skill reveal"><h3>Excel, Access &amp; Tableau</h3><p>Pivot tables, Solver, scenario analysis, relational databases, dashboards.</p></div>
     </div>
   </section>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="job">
-      <h3>Data Analysis Intern, Index Asia</h3>
-      <p class="when">Mar 2025 – Mar 2026</p>
-      <ul>
-        <li>Cleaned and processed more than 90,000 consumer feedback records in Excel.</li>
-        <li>Ran share-of-voice and sentiment analysis to evaluate word-of-mouth strategies.</li>
-        <li>Wrote consumer-insight reports for automotive, beauty and banking brands.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Project Management Intern, Sunnet</h3>
-      <p class="when">Jul 2024 – Aug 2024</p>
-      <ul>
-        <li>Gathered and analyzed requirements with internal teams and translated business needs into system design documentation.</li>
-        <li>Coordinated with developers and designers on interface and user-flow improvements.</li>
-        <li>Managed timelines and facilitated stakeholder status meetings.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>HR Coordinator, NCCU Data Analytics Club</h3>
-      <p class="when">Jun 2023 – Jun 2024</p>
-      <ul>
-        <li>Ran recruitment and tracked member attendance and engagement.</li>
-      </ul>
+  <section class="wrap">
+    <div class="two">
+      <div id="experience">
+        <p class="eyebrow">Background</p>
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="item reveal">
+            <h3>Data Analysis Intern, Index Asia</h3>
+            <p class="when">Mar 2025 – Mar 2026</p>
+            <ul>
+              <li>Cleaned and processed more than 90,000 consumer feedback records in Excel.</li>
+              <li>Ran share-of-voice and sentiment analysis to evaluate word-of-mouth strategies.</li>
+              <li>Wrote consumer-insight reports for automotive, beauty and banking brands.</li>
+            </ul>
+          </div>
+          <div class="item reveal">
+            <h3>Project Management Intern, Sunnet</h3>
+            <p class="when">Jul 2024 – Aug 2024</p>
+            <ul>
+              <li>Gathered and analyzed requirements with internal teams and translated business needs into system design documentation.</li>
+              <li>Coordinated with developers and designers on interface and user-flow improvements.</li>
+              <li>Managed timelines and facilitated stakeholder status meetings.</li>
+            </ul>
+          </div>
+          <div class="item reveal">
+            <h3>HR Coordinator, NCCU Data Analytics Club</h3>
+            <p class="when">Jun 2023 – Jun 2024</p>
+            <ul>
+              <li>Ran recruitment and tracked member attendance and engagement.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="education">
+        <p class="eyebrow">Learning</p>
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="item reveal">
+            <h3>Master of Business Analytics</h3>
+            <p class="when">Schulich School of Business, York University · May 2026 – Apr 2027</p>
+          </div>
+          <div class="item reveal">
+            <h3>B.B.A. in International Business</h3>
+            <p class="when">National Chengchi University, Taiwan · 2021 – 2025</p>
+          </div>
+          <div class="item reveal">
+            <h3>Exchange semester</h3>
+            <p class="when">SKEMA Business School, France · Fall 2024</p>
+          </div>
+        </div>
+
+        <h3 style="margin:8px 0 4px">Certificates</h3>
+        <ul class="certs reveal">
+          <li>Supervised Learning with scikit-learn <span>DataCamp · 2026</span></li>
+          <li>Unsupervised Learning in Python <span>DataCamp · 2026</span></li>
+          <li>Machine Learning with Tree-Based Models <span>DataCamp · 2026</span></li>
+          <li>Intermediate SQL <span>DataCamp · 2026</span></li>
+        </ul>
+      </div>
     </div>
   </section>
-
-  <section>
-    <h2>Education</h2>
-    <div class="job">
-      <h3>Master of Business Analytics, Schulich School of Business, York University, Canada</h3>
-      <p class="when">May 2026 – Apr 2027</p>
-    </div>
-    <div class="job">
-      <h3>B.B.A. in International Business, National Chengchi University, Taiwan</h3>
-      <p class="when">2021 – 2025 · English Taught Program</p>
-    </div>
-    <div class="job">
-      <h3>Exchange semester, SKEMA Business School, France</h3>
-      <p class="when">Fall 2024</p>
-    </div>
-  </section>
-
-  <footer>No course-provided, company or client data is published here.</footer>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© Megan (Yi-Feng) Hung</span>
+    <span>No course-provided, company or client data is published here.</span>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle. The choice is remembered when storage is available.
+  (function () {
+    var root = document.documentElement, key = "theme";
+    try { var saved = localStorage.getItem(key); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+    document.getElementById("theme").addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme")
+        ? root.getAttribute("data-theme") === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var next = dark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+
+  // Project filter.
+  (function () {
+    var chips = document.querySelectorAll(".chip"), cards = document.querySelectorAll("#grid .card"), count = document.getElementById("count");
+    function apply(filter) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var match = filter === "all" || card.dataset.tools.split(" ").indexOf(filter) !== -1;
+        card.hidden = !match;
+        if (match) { shown++; card.classList.add("in"); }
+      });
+      count.textContent = filter === "all" ? "" : "Showing " + shown + " of " + cards.length + " projects";
+    }
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+        apply(chip.dataset.filter);
+      });
+    });
+  })();
+
+  // Reveal on scroll.
+  (function () {
+    var items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("js");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
 </body>
 </html>
