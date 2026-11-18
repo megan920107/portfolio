@@ -24,9 +24,10 @@ I'm a Master of Business Analytics student at Schulich who turns messy data into
 ## Experience
 
 **Data Analysis Intern, Index Asia (i-Buzz department)** · Mar 2025 – Mar 2026
-- Pulled brand and competitor data (volume, sentiment, positive-to-negative ratio) from the company's social-listening platform and checked it before use, filtering out data that was not reliable.
-- Processed datasets of up to 90,000+ records in Excel (pivot tables, VLOOKUP, INDEX MATCH, data validation) and charted the results for each report.
-- Wrote weekly, monthly and quarterly reports in English and Chinese for automotive, beauty and banking clients, working from templates set up by senior analysts: ranked hot topics, explained changes from the previous period and wrote the commentary for each section.
+- Combined data from the company's social-listening platform with data I collected manually from websites the platform could not cover, organising everything in Excel (pivot tables, VLOOKUP, INDEX MATCH, data validation) with datasets of up to 90,000+ records.
+- Cleaned the data before use: removed duplicates, checked that dates matched each report period (weekly, monthly, half-year) and filtered out unreliable data.
+- Read posts and labelled each one positive, negative or neutral, then built pivot tables to calculate sentiment ratios by brand and period.
+- Wrote weekly, monthly, quarterly and half-year reports in English and Chinese for automotive, beauty and banking clients, working from templates set up by senior analysts.
 
 **Project Management Intern, Sunnet** · Jul 2024 – Aug 2024
 - Gathered and analyzed requirements with internal teams and translated business needs into system design
